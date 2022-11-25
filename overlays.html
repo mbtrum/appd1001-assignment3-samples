@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/reset.css" rel="stylesheet">
+    <style>
+        body, html {            
+            height: 100%;
+        }
+
+        body {
+            background-image: url("./assets/beach.jpg");
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        p {
+            padding: 1rem;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin:0 auto;
+        }
+
+        ul.flex-wrapper {
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .flex-card {
+            padding:5px;
+            width: 300px;
+            height: 450px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+    <title>Overlays</title>
+</head>
+<body>
+    <p>
+        <a href="index.html">Home</a>        
+    </p>
+    <h1>Overlay Example</h1>
+
+    <div class="container">
+        <ul class="flex-wrapper">
+            <li class="flex-card">
+                Some content here
+            </li>
+            <li class="flex-card">
+                Some content here
+            </li>
+            <li class="flex-card">
+                Some content here
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
