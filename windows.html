@@ -7,13 +7,11 @@
     <link href="./assets/jquery-ui.min.css" rel="stylesheet">
     <style>
         #win-contact {
-            display: none;
-            z-index: 2;
+            display: none;           
         }
 
         #win-portfolio {
-            display:none;
-            z-index: 3;
+            display:none;           
         }
 
         .window-container {
@@ -24,6 +22,7 @@
             height: 300px;
             background-color: lightgray;
             border: 1px solid #333;
+            z-index: 10;                        
         }
 
         .window-header {
@@ -44,6 +43,10 @@
             top:5px;
             z-index:2;
             cursor: pointer;
+        }
+
+        .selected-window {
+            z-index: 100;
         }
     </style>
     <title>Windows Sample</title>
@@ -72,20 +75,34 @@
     <script src="./assets/jquery-ui.min.js"></script>
 
     <script>
+        function resetWindows() {           
+            $(".window-container").removeClass("selected-window")
+        }
+
         $(".window-container").draggable({
             handle: ".window-header"
         });
 
-        $("#btn-contact").click(function() {
+        $("#btn-contact").click(function() {            
+            resetWindows()
             $("#win-contact").show()
+            $("#win-contact").addClass("selected-window")
+
         })
 
-        $("#btn-portfolio").click(function() {
+        $("#btn-portfolio").click(function() {            
+            resetWindows()
             $("#win-portfolio").show()
+            $("#win-portfolio").addClass("selected-window")
         })
         
         $(".btn-win-close").click(function() {            
             $(this).parent().hide()            
+        })
+
+        $(".window-header").click(function(){           
+            resetWindows()
+            $(this).parent().addClass("selected-window")
         })
     </script>
 </body>
