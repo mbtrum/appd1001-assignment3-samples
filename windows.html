@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/jquery-ui.min.css" rel="stylesheet">
+    <style>
+        #win-contact {
+            display: none;
+            z-index: 2;
+        }
+
+        #win-portfolio {
+            display:none;
+            z-index: 3;
+        }
+
+        .window-container {
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            width: 400px;
+            height: 300px;
+            background-color: lightgray;
+            border: 1px solid #333;
+        }
+
+        .window-header {
+            cursor: move;
+            background: gray;
+            border: 1px solid #ccc;
+            position:relative;
+            padding: 5px 10px;
+        }
+
+        .window-body {
+            padding: 10px;
+        }
+
+        .btn-win-close {
+            position: absolute;
+            right:10px;
+            top:5px;
+            z-index:2;
+            cursor: pointer;
+        }
+    </style>
+    <title>Windows Sample</title>
+</head>
+
+<body>
+    <a href="index.html">Home</a>
+    <h1>Windows Sample - Uses JQuery / JQuery UI</h1>
+    <button id="btn-contact">Contact Me</button>
+    <br><br>
+    <button id="btn-portfolio">Portfolio</button>
+
+    <div id="win-contact" class="window-container">
+        <button class="btn-win-close">X</button>
+        <div class="window-header">About Me</div>
+        <div class="window-body">Body</div>
+    </div>
+
+    <div id="win-portfolio" class="window-container">
+        <button class="btn-win-close">X</button>
+        <div class="window-header">Portfolio</div>
+        <div class="window-body">Body</div>
+    </div>
+
+    <script src="./assets/jquery-3.6.1.min.js"></script>
+    <script src="./assets/jquery-ui.min.js"></script>
+
+    <script>
+        $(".window-container").draggable({
+            handle: ".window-header"
+        });
+
+        $("#btn-contact").click(function() {
+            $("#win-contact").show()
+        })
+
+        $("#btn-portfolio").click(function() {
+            $("#win-portfolio").show()
+        })
+        
+        $(".btn-win-close").click(function() {            
+            $(this).parent().hide()            
+        })
+    </script>
+</body>
+
+</html>

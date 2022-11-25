@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Pinterest Card Sample</title>
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        ul.card-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li.card-item {
+            flex: 0 1 275px;
+            position: relative;
+            margin: 0 1.5rem;
+        }
+
+        div.card-overlay {
+            z-index: 2;
+            content: '';
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+
+            visibility: hidden;
+        }
+
+        .card-img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .card-img:hover {
+            filter: brightness(50%);
+        }
+
+        .card-img-link:hover+div.card-overlay {
+            visibility: visible;
+        }
+
+        .small-txt {
+            padding-top: 0.5rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Pinterest - Cakes</h1>
+    </header>
+    
+    <ul class="card-list">
+        <li class="card-item">
+            <a href="index.html" class="card-img-link">
+                <img src="./assets/cake1.jpg" alt="cake" class="card-img">
+            </a>
+            <div class="card-overlay">
+                <p>Open</p>
+                <p class="small-txt"><i class="fa-solid fa-arrow-up-right-from-square"></i> bakingamoment.com</p>
+            </div>
+        </li>
+
+        <li class="card-item">
+            <a href="index.html" class="card-img-link">
+                <img src="./assets/cake2.jpg" alt="cake" class="card-img">
+            </a>
+            <div class="card-overlay">
+                <p>Open</p>
+                <p class="small-txt"><i class="fa-solid fa-arrow-up-right-from-square"></i> landocakes.com</p>
+            </div>
+        </li>
+
+        <li class="card-item">
+            <a href="index.html" class="card-img-link">
+                <img src="./assets/cake3.jpg" alt="cake" class="card-img">
+            </a>
+            <div class="card-overlay">
+                <p>Open</p>
+                <p class="small-txt"><i class="fa-solid fa-arrow-up-right-from-square"></i> paleocakes.com</p>
+            </div>
+        </li>
+
+    </ul>
+</body>
+
+</html>
